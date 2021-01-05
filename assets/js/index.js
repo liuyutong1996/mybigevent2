@@ -15,7 +15,7 @@ $(function () {
         // 1、清空本地存储里面的token
         localStorage.removeItem("token");
         //2、跳转到登录页面
-        location.href = "../../login.html";
+        location.href = "/login.html";
         //关闭confirm弹出层
         layer.close(index);
       }
@@ -34,6 +34,7 @@ function getUserInfo() {
       if (res.status !== 0) {
         return layui.layer.msg("获取用户信息失败！");
       }
+      console.log("123");
       renderAvatar(res.data);
     },
     //不论成功还是失败，都会调complete这个回调函数
